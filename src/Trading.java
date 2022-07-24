@@ -80,4 +80,9 @@ public class Trading {
     public void soldProducts(int idProduct) {
         System.out.println(tradeHistory.values());
     }
+
+    public void findBuyersById(int idUser) {
+        System.out.println(tradeHistory.keySet().stream().filter(id -> id.getId() == idUser).collect(Collectors.toList()));
+
+    }
 }

@@ -20,6 +20,7 @@ public class ListOfUsers {
         users.add(thirdUser);
         return users;
     }
+
     public List<User> findAllUsers() {
         savedUsers();
         System.out.println();
