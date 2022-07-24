@@ -15,8 +15,11 @@ public class Trading {
     private List<Product> buyListOfFirstUser = new ArrayList<>();
     private List<Product> buyListOfSecondUser = new ArrayList<>();
     private List<Product> buyListOfThirdUser = new ArrayList<>();
+    private List<User> buyersListOfFirstProduct = new ArrayList<>();
+    private List<User> buyersListOfSecondProduct = new ArrayList<>();
+    private List<User> buyersListOfThirdProduct = new ArrayList<>();
     public Map<User, List<Product>> tradeHistory = new HashMap<>();
-
+    public Map<Product, List<User>> tradingProducts = new HashMap<>();
     public void buyProd(int user, int product) throws MyException {
 //        System.out.println("__________Method trading_____________");
         if (user <= 0 || product <= 0 || user >  allUsers.size() || product > allProducts.size()) {
@@ -37,6 +40,7 @@ public class Trading {
                         tradeHistory.put(idU, buyListOfFirstUser);
                         System.out.println("Bought! " + tradeHistory.keySet().stream()
                                 .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        putUserIntoListOfProduct(idP, 0);
                     }
                     break;
                 case 2:
@@ -50,6 +54,7 @@ public class Trading {
                         tradeHistory.put(idU, buyListOfSecondUser);
                         System.out.println("Bought! " + tradeHistory.keySet().stream()
                                 .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        putUserIntoListOfProduct(idP, 1);
                     }
                     break;
                 case 3:
@@ -63,11 +68,25 @@ public class Trading {
                         tradeHistory.put(idU, buyListOfThirdUser);
                         System.out.println("Bought! " + tradeHistory.keySet().stream()
                                 .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        putUserIntoListOfProduct(idP, 2);
                     }
                     break;
                 default:
                     throw new MyException("Something goes wrong!");
             }
+        }
+    }
+
+    private void putUserIntoListOfProduct(Product product, int indexUser) {
+        if (product.getId() == 1) {
+            buyersListOfFirstProduct.add(allUsers.get(indexUser));
+            tradingProducts.put(product, buyersListOfFirstProduct);
+        } else if (product.getId() == 2) {
+            buyersListOfFirstProduct.add(allUsers.get(indexUser));
+            tradingProducts.put(product, buyersListOfFirstProduct);
+        } else if (product.getId() == 3) {
+            buyersListOfFirstProduct.add(allUsers.get(indexUser));
+            tradingProducts.put(product, buyersListOfFirstProduct);
         }
     }
 
@@ -88,7 +107,19 @@ public class Trading {
     }
 
     public void soldProducts(int idProduct) {
-        System.out.println(tradeHistory.values());
+        switch (idProduct) {
+            case 1:
+                System.out.println("Users list of first product " + buyersListOfFirstProduct);
+                break;
+            case 2:
+                System.out.println("Users list of second product " + buyersListOfSecondProduct);
+                break;
+            case 3:
+                System.out.println("Users list of third product " + buyersListOfThirdProduct);
+                break;
+            default:
+                break;
+        }
     }
 
     public void findBuyersById(int idUser) {
