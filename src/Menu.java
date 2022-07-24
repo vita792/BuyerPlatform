@@ -1,3 +1,5 @@
+import myExeptions.MyException;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -9,7 +11,7 @@ public class Menu {
 
 //    public void initScanner() {}
 
-    public void menuWord(String itemMenu) {
+    public void menuWord(String itemMenu) throws MyException {
         switch (itemMenu) {
 
             case "/start":

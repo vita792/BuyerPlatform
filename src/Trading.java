@@ -17,7 +17,7 @@ public class Trading {
     private List<Product> buyListOfThirdUser = new ArrayList<>();
     public Map<User, List<Product>> tradeHistory = new HashMap<>();
 
-    public void buyProd(int user, Product product){
+    public void buyProd(int user, Product product) throws MyException {
 //        System.out.println("__________Method trading_____________");
         User idU = allUsers.get(user - 1);
         int switchNumber = idU.getId();
@@ -26,6 +26,7 @@ public class Trading {
             case 1:
                 if (idU.getAmountOfMoney() <= 0 || (idU.getAmountOfMoney() - product.getPrice()) < 0) {
                     System.out.println("Not enough money");
+                    throw new MyException("Cannot buy! ");
                 } else {
                     double money = (idU.getAmountOfMoney() - product.getPrice());
                     idU.setAmountOfMoney(money);
@@ -37,6 +38,7 @@ public class Trading {
             case 2:
                 if (idU.getAmountOfMoney() <= 0 || (idU.getAmountOfMoney() - product.getPrice()) < 0) {
                     System.out.println("Not enough money");
+                    throw new MyException("Cannot buy! ");
                 } else {
                     double money = (idU.getAmountOfMoney() - product.getPrice());
                     idU.setAmountOfMoney(money);
@@ -48,6 +50,7 @@ public class Trading {
             case 3:
                 if (idU.getAmountOfMoney() <= 0 || (idU.getAmountOfMoney() - product.getPrice()) < 0) {
                     System.out.println("Not enough money");
+                    throw new MyException("Cannot buy! ");
                 } else {
                     double money = (idU.getAmountOfMoney() - product.getPrice());
                     idU.setAmountOfMoney(money);
@@ -57,7 +60,7 @@ public class Trading {
                 }
                 break;
             default:
-                new MyException("something goes wrong");
+                throw new MyException("Something goes wrong!");
         }
     }
 
@@ -72,8 +75,7 @@ public class Trading {
             case 3:
                 System.out.println("Product list of third user " + buyListOfThirdUser);
                 break;
-            default:
-                new MyException("something goes wrong");
+            default: break;
         }
     }
 
@@ -83,6 +85,5 @@ public class Trading {
 
     public void findBuyersById(int idUser) {
         System.out.println(tradeHistory.keySet().stream().filter(id -> id.getId() == idUser).collect(Collectors.toList()));
-
     }
 }

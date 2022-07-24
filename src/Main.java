@@ -1,5 +1,7 @@
+import myExeptions.MyException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
 
         System.out.println();
         System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<< Hello Marketplace Application! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
