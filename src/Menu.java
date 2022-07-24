@@ -71,7 +71,7 @@ public class Menu {
                 System.out.println("For start trading choose user. Enter id from 1 to 3");
                 scanner.hasNextInt();
                 System.out.println("Now choose product. Enter id from 1 to 3");
-                trade.buyProd(scanner.nextInt(), listOfProducts.findByIdProducts(scanner.nextInt()));
+                trade.buyProd(scanner.nextInt(), scanner.nextInt());
                 break;
             case "/trade/show bought for user with id":
                 System.out.println("Enter id from 1 to 3");
