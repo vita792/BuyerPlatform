@@ -1,11 +1,8 @@
 package myExeptions;
 
 public class MyException extends Exception{
-    public MyException() {
-        super();
-    }
-    public void myExceptionMethod() {
-
-        System.out.println("This is not valid value or other problem!");
+    public MyException(String message) {
+        super(message + "This is not valid value or other problem!");
+//        System.out.println("This is not valid value or other problem!");
     }
 }

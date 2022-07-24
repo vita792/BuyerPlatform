@@ -17,7 +17,7 @@ public class Trading {
     private List<Product> buyListOfThirdUser = new ArrayList<>();
     public Map<User, List<Product>> tradeHistory = new HashMap<>();
 
-    public void buyProd(int user, Product product) {
+    public void buyProd(int user, Product product){
 //        System.out.println("__________Method trading_____________");
         User idU = allUsers.get(user - 1);
         int switchNumber = idU.getId();
@@ -57,7 +57,7 @@ public class Trading {
                 }
                 break;
             default:
-                new MyException().myExceptionMethod();
+                new MyException("something goes wrong");
         }
     }
 
@@ -73,7 +73,7 @@ public class Trading {
                 System.out.println("Product list of third user " + buyListOfThirdUser);
                 break;
             default:
-                new MyException().myExceptionMethod();
+                new MyException("something goes wrong");
         }
     }
 
