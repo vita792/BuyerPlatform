@@ -1,17 +1,6 @@
 import java.util.Scanner;
 
 public class Menu {
-//    public List<Users> listOfAllUsers();
-//    public List<Products> listOfAllProducts();
-//    public Products buyProduct(long idUser, long idProduct);
-//    public List<Products> listOfUserProducts(model.User id);
-//    public List<Users> boughtProduct(model.Product id);
-
-//
-//● If user doesn't have enough money to buy product, throw exception
-//● If user successfully bought the product display message about successful purchase
-//● When user is buying product, his amount of money decreases by product price
-//● After successful purchase, information about user and his products has to be stored in collection best  suited for that purpose
 
     Scanner scanner = new Scanner(System.in);
     private ListOfProducts listOfProducts = new ListOfProducts();

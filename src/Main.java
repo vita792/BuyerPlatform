@@ -11,7 +11,7 @@ public class Main {
                 "/start\n" +
                 "/show products\n" +
                 "/show users\n" +
-                "/trade\n" +
+                "/trade  //use this only after showing users and products\n" +
                 "/exit");
         do {
             menu.menuWord(menu.scanner.nextLine());

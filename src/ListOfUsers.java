@@ -32,11 +32,13 @@ public class ListOfUsers {
 
     public User findUserById(int idUser) {
         if (idUser > users.size() || idUser <= 0) {
-            System.out.printf("To see all available users used '/show users'. Marketplace Application are not visited by User with idNumber %d.\n", idUser);
+            System.out.printf("To see all available users used '/show users'. " +
+                    "Marketplace Application are not visited by User with idNumber %d.\n", idUser);
         } else {
             for (User user : users) {
                 if (user.getId() == idUser) {
-                    System.out.println(user.getId() + " " + user.getFirstName() + " " + user.getLastName() + " " + user.getAmountOfMoney() + "$");
+                    System.out.println(user.getId() + " " + user.getFirstName() + " "
+                            + user.getLastName() + " " + user.getAmountOfMoney() + "$");
                     return user;
                 }
             }

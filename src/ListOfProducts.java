@@ -30,7 +30,8 @@ public class ListOfProducts {
 
     public Product findByIdProducts(int idProd) {
         if (idProd > listOfProducts.size() || idProd <= 0) {
-            System.out.printf("To see all available products use '/show products'. Marketplace Application haven`t article %d.\n", idProd);
+            System.out.printf("To see all available products use '/show products'. " +
+                    "Marketplace Application haven`t article %d.\n", idProd);
         } else {
             for (Product product : listOfProducts) {
                 if (product.getId() == (idProd)) {
