@@ -26,7 +26,7 @@ public class ListOfUsers {
         System.out.println();
 //        System.out.println("Buyers:");
         for (User user : users) {
-            System.out.println(user);
+//            System.out.println(user);
         }
         return users;
     }

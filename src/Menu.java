@@ -9,8 +9,6 @@ public class Menu {
     private ListOfUsers listOfUsers = new ListOfUsers();
     private Trading trade = new Trading();
 
-//    public void initScanner() {}
-
     public void menuWord(String itemMenu) throws MyException {
         switch (itemMenu) {
 
@@ -22,7 +20,7 @@ public class Menu {
                 System.out.println("\nEnter data:\n" +
                         "/start\n" +
                         "/show products\n" +
-                        "/show users\n\n(for showing users and products before trading)\n" +
+                        "/show users\n\n" +
                         "/show users/show user with id\n" +
                         "/show products/show product with id\n\n" +
                         "/trade  //now you can trade! after that you can use options downs\n" +
@@ -34,11 +32,12 @@ public class Menu {
 
             case "/show products":
                 System.out.println("Today in our Market You can buy:");
-                listOfProducts.findAllProducts();
+                System.out.println(listOfProducts.findAllProducts());
                 System.out.println();
                 break;
 
             case "/show products/show product with id":
+                listOfProducts.findAllProducts();
                 System.out.println("Enter id from 1 to 3");
                 scanner.hasNextInt();
                 System.out.println("___ProductById___");
@@ -48,11 +47,12 @@ public class Menu {
 
             case "/show users":
                 System.out.println("___AllUsers___");
-                listOfUsers.findAllUsers();
+                System.out.println(listOfUsers.findAllUsers());
                 System.out.println();
                 break;
 
             case "/show users/show user with id":
+                listOfUsers.findAllUsers();
                 System.out.println("Enter id from 1 to 3");
                 scanner.hasNextInt();
                 System.out.println("___UserById___");

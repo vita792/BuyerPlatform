@@ -23,7 +23,7 @@ public class ListOfProducts {
     public List<Product> findAllProducts() {
         savedProducts();
         for (Product prod : listOfProducts) {
-            System.out.println(prod);
+//            System.out.println(prod);
         }
         return listOfProducts;
     }

@@ -8,7 +8,6 @@ public class Main {
         System.out.println();
 
         Menu menu = new Menu();
-//        menu.initScanner();
         System.out.println("\nEnter data:\n" +
                 "/start\n(for initialising system show users and products)\n" +
                 "/show products\n" +

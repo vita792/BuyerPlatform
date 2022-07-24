@@ -35,7 +35,8 @@ public class Trading {
                         idU.setAmountOfMoney(money);
                         buyListOfFirstUser.add(idP);
                         tradeHistory.put(idU, buyListOfFirstUser);
-                        System.out.println("Bought! " + tradeHistory.keySet().stream().filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        System.out.println("Bought! " + tradeHistory.keySet().stream()
+                                .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
                     }
                     break;
                 case 2:
@@ -47,7 +48,8 @@ public class Trading {
                         idU.setAmountOfMoney(money);
                         buyListOfSecondUser.add(idP);
                         tradeHistory.put(idU, buyListOfSecondUser);
-                        System.out.println("Bought! " + tradeHistory.keySet().stream().filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        System.out.println("Bought! " + tradeHistory.keySet().stream()
+                                .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
                     }
                     break;
                 case 3:
@@ -59,7 +61,8 @@ public class Trading {
                         idU.setAmountOfMoney(money);
                         buyListOfThirdUser.add(idP);
                         tradeHistory.put(idU, buyListOfThirdUser);
-                        System.out.println("Bought! " + tradeHistory.keySet().stream().filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
+                        System.out.println("Bought! " + tradeHistory.keySet().stream()
+                                .filter(id -> id.getId() == idU.getId()).collect(Collectors.toList()));
                     }
                     break;
                 default:
@@ -89,6 +92,7 @@ public class Trading {
     }
 
     public void findBuyersById(int idUser) {
-        System.out.println(tradeHistory.keySet().stream().filter(id -> id.getId() == idUser).collect(Collectors.toList()));
+        System.out.println(tradeHistory.keySet().stream()
+                .filter(id -> id.getId() == idUser).collect(Collectors.toList()));
     }
 }
