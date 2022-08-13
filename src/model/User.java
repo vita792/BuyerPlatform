@@ -1,10 +1,10 @@
 package model;
 
 public class User {
-    int id;
-    String firstName;
-    String lastName;
-    double amountOfMoney;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private double amountOfMoney;
 
     public User(int id, String firstName, String lastName, double amountOfMoney) {
         this.id = id;

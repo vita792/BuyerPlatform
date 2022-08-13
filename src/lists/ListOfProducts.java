@@ -1,3 +1,5 @@
+package lists;
+
 import model.Product;
 
 import java.util.ArrayList;
@@ -5,11 +7,11 @@ import java.util.List;
 
 public class ListOfProducts {
 
-    Product firstProduct = new Product(1, "Apple", 1.89);
-    Product secondProduct = new Product(2, "Cheese", 4.73);
-    Product thirdProduct = new Product(3, "Ham", 9.25);
+    private Product firstProduct = new Product(1, "Apple", 1.89);
+    private Product secondProduct = new Product(2, "Cheese", 4.73);
+    private Product thirdProduct = new Product(3, "Ham", 9.25);
 
-    List<Product> listOfProducts = new ArrayList<>();
+    private List<Product> listOfProducts = new ArrayList<>();
 
     private List<Product> savedProducts() {
 
@@ -20,9 +22,10 @@ public class ListOfProducts {
 
     }
 
+    List<Product> list = savedProducts();
+
     public List<Product> findAllProducts() {
-        savedProducts();
-        for (Product prod : listOfProducts) {
+        for (Product prod : list) {
 //            System.out.println(prod);
         }
         return listOfProducts;
@@ -45,7 +48,7 @@ public class ListOfProducts {
 
     @Override
     public String toString() {
-        return "ListOfProducts {" +
+        return "lists.ListOfProducts {" +
                 "firstProduct = " + firstProduct +
                 ", secondProduct = " + secondProduct +
                 ", thirdProduct = " + thirdProduct +

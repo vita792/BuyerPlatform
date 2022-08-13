@@ -1,3 +1,6 @@
+import actions.Trading;
+import lists.ListOfProducts;
+import lists.ListOfUsers;
 import myExeptions.MyException;
 
 import java.util.Scanner;

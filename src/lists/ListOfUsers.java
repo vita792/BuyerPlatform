@@ -1,3 +1,5 @@
+package lists;
+
 import model.User;
 
 import java.util.ArrayList;
@@ -21,11 +23,12 @@ public class ListOfUsers {
         return users;
     }
 
+    public List<User> list = savedUsers();
+
     public List<User> findAllUsers() {
-        savedUsers();
         System.out.println();
 //        System.out.println("Buyers:");
-        for (User user : users) {
+        for (User user : list) {
 //            System.out.println(user);
         }
         return users;
